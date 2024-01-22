@@ -1,0 +1,40 @@
+nav {
+    background-color: #bebebe;
+    color: #000000;
+    position: relative;
+    text
+}
+
+footer{
+    background-color: #bebebe;
+    font-size: medium;
+    text-align: center;
+    height: 100px;
+}
+
+main{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    position: relative;
+}
+
+table{
+color: aliceblue;
+border: 1px solid;
+}
+
+tr{
+    color: aliceblue;
+    border: 1px solid;
+    }
+
+    th{
+        color: aliceblue;
+        border: 1px solid;
+    }
+
+    td{
+        color: aliceblue;
+        border: 1px solid;
+    }
