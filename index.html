@@ -25,37 +25,45 @@
     </header>
     <br>
     <main>
-        <div
-            style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: brown;">
-            <table id="employee">
 
-                <tr>
-                    <th>
-                        <br>
-                        Employee ID
-                        <br>
-                    </th>
-                    <th>
-                        <br>
-                        Full Name
-                        <br>
-                    </th>
-                    <th>
-                        <br>
-                        Department
-                        <br>
-                    </th>
-                    <th>
-                        <br>
-                        Level
-                        <br>
-                    </th>
-                </tr>
-                <td>
-                    
-                </td>
-            </table>
-        </div>
+
+        <form id="employeeForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName"><br>
+
+            <label for="department">Department:</label>
+            <select id="department" name="department">
+                <option value="Administration">Administration</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Development">Development</option>
+                <option value="Finance">Finance</option>
+            </select><br>
+
+            <label for="level">Level:</label>
+            <select id="level" name="level">
+                <option value="Junior">Junior</option>
+                <option value="Mid-Senior">Mid-Senior</option>
+                <option value="Senior">Senior</option>
+            </select><br>
+
+            <label for="imageUrl">Image URL:</label>
+            <input type="text" id="imageUrl" name="imageUrl" required><br>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+        <br>
+        <br>
+
+
+        <table id="employeeCards">
+            <tr>
+                <th>Employees Cards</th>
+           
+              </tr>
+
+
+        </table>
+
 
     </main>
     <br>
