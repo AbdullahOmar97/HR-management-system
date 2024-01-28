@@ -47,6 +47,15 @@ main {
 td{
     background-color: #86A7FC;
 
-    border: 4px solid;
+    border: 2px solid;
 
 }
+
+table{
+    border: 1px solid;
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
+    width: 50%;
+}
+

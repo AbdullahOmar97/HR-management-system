@@ -2,6 +2,8 @@
 
 let allEmployees = [];
 
+console.log(allEmployees);
+
 
 function Employee(employeeID, fullName, department, level, imageURL) {
 
@@ -43,8 +45,6 @@ Employee.prototype.salary = function () {
 }
 
 
-
-
 new Employee(1000, 'Ghazi Samer', 'Administration', 'Senior');
 new Employee(1001, 'Lana Ali', 'Finance', 'Senior');
 new Employee(1002, 'Tamara Ayoub', 'Marketing', 'Senior');
@@ -55,17 +55,11 @@ new Employee(1006, 'Hadi Ahmad', 'Finance', 'Mid-Senior');
 
 
 
-let oldEmployee = document.getElementById('oldEmployee');
-
-console.log(oldEmployee)
-
-
-
-
 
 function generateEmployeeID() {
     return Math.floor(1000 + Math.random() * 9000);
 }
+
 
 function submitForm() {
     let fullName = document.getElementById('fullName').value;
@@ -77,8 +71,41 @@ function submitForm() {
 
     newEmployee.renderCard();
 
+    saveCard(allEmployees);
+
     document.getElementById('employeeForm').reset();
 }
+
+
+
+
+
+Employee.prototype.oldCard = function () {
+    let oldCardTable = document.getElementById('oldCardTable');
+
+    let oldCardTr = document.createElement("tr");
+
+
+    let cell = document.createElement("td");
+
+    cell.innerHTML = `
+    
+        <br>
+        <img src="${this.imageURL}">
+        <p>Name: ${this.fullName} - ID: ${this.employeeID}</p>
+        <p>Department: ${this.department} - Level: ${this.level} </p>
+        <p>Salary: JD ${this.salary()}</p>
+        <br >
+    
+    `;
+
+    oldCardTr.appendChild(cell);
+
+};
+
+
+
+
 
 Employee.prototype.renderCard = function () {
 
@@ -87,7 +114,7 @@ Employee.prototype.renderCard = function () {
     let card = document.createElement('tr');
 
     card.innerHTML = `
-    <tr>
+    
     <td>
         <br>
         <img src="${this.imageURL}">
@@ -96,8 +123,39 @@ Employee.prototype.renderCard = function () {
         <p>Salary: JD ${this.salary()}</p>
         <br >
         </td>
-        </tr>
+    
     `;
 
     employeesSection.appendChild(card);
+
+
+
 };
+
+function saveCard(data){
+
+    let savedArr = JSON.stringify(data)
+
+localStorage.setItem("employees", savedArr)
+
+}
+
+
+function gitEmployeeLS(){
+
+let employeesLS = localStorage.getItem("employees")
+let employeesArrLS = JSON.parse(employeesLS)
+
+for (let index = 8; index < employeesArrLS.length; index++) {
+
+
+new Employee(employeesArrLS[index].employeeID,employeesArrLS[index].fullName,employeesArrLS[index].department,employeesArrLS[index].level);
+    
+}
+
+console.log(employeesArrLS)
+
+}
+
+gitEmployeeLS()
+
