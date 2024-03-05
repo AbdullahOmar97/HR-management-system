@@ -19,6 +19,7 @@ function Employee(employeeID, fullName, department, level, imageURL) {
 
 
 
+
 Employee.prototype.salary = function () {
     let salaryRange;
     switch (this.level) {
